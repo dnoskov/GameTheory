@@ -1,7 +1,4 @@
 object Dijkstra {
-  implicit object DijkstraOrdering extends Ordering[(Int,Map[Int,(Int,List[Int])])]{
-    def compare(x:(Int,Map[Int,(Int,List[Int])]),y:(Int,Map[Int,(Int,List[Int])])):Int = x._1 compare y._1
-  }
 
   def apply(n: Int, edges: Map[Int, List[(Int, Int)]], from: Int):  Map[Int, (Int, List[Int])] = dijkstra {
     1 to n map (_ ->(Int.MaxValue, List.empty[Int])) toMap
